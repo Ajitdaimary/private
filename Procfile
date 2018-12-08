@@ -1,1 +1,1 @@
-worker: python Ajit.py
+worker: python game.py
