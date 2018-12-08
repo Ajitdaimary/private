@@ -833,7 +833,7 @@ async def upvote(ctx):
     if ctx.message.author.bot:
       return
     else:
-      await client.send_message(ctx.message.author, 'Upvote us: https://discordbots.org/bot/515403515217313795')
+      await client.send_message(ctx.message.author, 'no link')
       await client.say('Check your dm for link')
 	
 @client.command(pass_context = True)
@@ -930,7 +930,7 @@ async def htmltutorial(ctx, *, msg = None):
    
 @client.command(pass_context = True)
 async def github(ctx, *, msg = None):
-    if not msg: await client.say("Please specify respo. ``Format- https://github.com/uksoftworld/DarkBot``")
+    if not msg: await client.say("Please specify respo. ``Format- https://github.com``")
     if '@here' in msg or '@everyone' in msg:
       return
     else: await client.say('https://github.com/' + msg)
@@ -949,7 +949,7 @@ async def invite(ctx):
     if ctx.message.author.bot:
       return
     else:
-      embed=discord.Embed(title="Click on this link to invite:", description="https://discordapp.com/api/oauth2/authorize?client_id=515403515217313795&permissions=8&scope=bot" , color=0x00fd1b)
+      embed=discord.Embed(title="Click on this link to invite:", description="https://discordapp.com/api/oauth2/authorize?client_id=520695921734844426&permissions=8&scope=bot" , color=0x00fd1b)
       await client.say(embed=embed)
 
 @client.command(pass_context = True)
@@ -957,15 +957,15 @@ async def authlink(ctx):
     if ctx.message.author.bot:
       return
     else:
-      embed=discord.Embed(title="Click on this link to invite:", description="https://discordapp.com/api/oauth2/authorize?client_id=515403515217313795&permissions=8&scope=bot" , color=0x00fd1b)
+      embed=discord.Embed(title="Click on this link to invite:", description="https://discordapp.com/api/oauth2/authorize?client_id=520695921734844426&permissions=8&scope=bot" , color=0x00fd1b)
       await client.say(embed=embed)
 
 @client.command(pass_context = True)
 async def bottutorial(ctx, *, msg = None):
-    if not msg: await client.say("You can check https://github.com/uksoftworld/discord.py-tutorial/ for more information")
+    if not msg: await client.say("You can check no link")
     if '@here' in msg or '@everyone' in msg:
       return
-    else: await client.say('https://github.com/uksoftworld/discord.py-tutorial/blob/master/' + msg + '.py')
+    else: await client.say('no link'/' + msg + '.py')
     return
 
 @client.command(pass_context = True)
@@ -973,7 +973,7 @@ async def dyno(ctx, *, msg = None):
     if not msg: await client.say("You can check https://github.com/uksoftworld/dynoCC for more information")
     if '@here' in msg or '@everyone' in msg:
       return
-    else: await client.say('https://github.com/uksoftworld/dynoCC/blob/master/' + msg)
+    else: await client.say('no link/' + msg)
     return
 
 @client.command(pass_context = True)
