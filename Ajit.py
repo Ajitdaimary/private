@@ -149,7 +149,7 @@ async def on_reaction_add(reaction, user):
         embed.add_field(name = 'Setting up Multiverse bot log(Admin Permission required) ',value ='Use ``mv!setuplog`` and it will automatically add a log channel and log all stuffs there.',inline = False)
         await client.send_message(user,embed=embed)
 	
-      if reaction.emoji == '??':
+      if reaction.emoji == '🎦':
         r, g, b = tuple(int(x * 255) for x in colorsys.hsv_to_rgb(random.random(), 1, 1))
         embed = discord.Embed(color = discord.Color((r << 16) + (g << 8) + b))
         embed.set_author(name='Emoji Help')
