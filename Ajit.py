@@ -50,7 +50,7 @@ async def on_message(message):
 @client.event
 async def on_reaction_add(reaction, user):
   if reaction.message.server is None:
-      if reaction.emoji == '??':
+      if reaction.emoji == 'G':
         r, g, b = tuple(int(x * 255) for x in colorsys.hsv_to_rgb(random.random(), 1, 1))
         embed = discord.Embed(color = discord.Color((r << 16) + (g << 8) + b))
         embed.add_field(name = 'mv!donate',value ='Sends donation link',inline = False)
@@ -71,7 +71,7 @@ async def on_reaction_add(reaction, user):
         embed.add_field(name = 'mv!happybirthday @user ',value ='To wish someone happy birthday',inline = False)
         embed.add_field(name = 'mv!verify ',value ='Use it to get verified role. Note- It needs proper setup.',inline = False)
         await client.send_message(user,embed=embed)
-      if reaction.emoji == '??':
+      if reaction.emoji == '🇲':
         r, g, b = tuple(int(x * 255) for x in colorsys.hsv_to_rgb(random.random(), 1, 1))
         embed = discord.Embed(color = discord.Color((r << 16) + (g << 8) + b))
         embed.set_author(name='Moderation Commands Help')
@@ -92,10 +92,10 @@ async def on_reaction_add(reaction, user):
         embed.add_field(name = 'mv!serverinfo(Kick members Permission Required) ',value ='Use it like ``mv!serverinfo`` to get server info',inline = False)
         embed.add_field(name = 'mv!userinfo(Kick members Permission Required) ',value ='Use it like ``mv!userinfo @user`` to get some basic info of tagged user',inline = False)
         react_message = await client.send_message(user,embed=embed)
-        reaction = '?'
+        reaction = '🇲'
         await client.add_reaction(react_message, reaction)
     
-      if reaction.emoji == '?':
+      if reaction.emoji == '🇲':
         r, g, b = tuple(int(x * 255) for x in colorsys.hsv_to_rgb(random.random(), 1, 1))
         embed = discord.Embed(color = discord.Color((r << 16) + (g << 8) + b))
         embed.set_author(name='Moderation Commands Help')
@@ -114,10 +114,10 @@ async def on_reaction_add(reaction, user):
         embed.add_field(name = 'mv!norole(Kick members Permission Required) ',value ='Use it like ``mv!norole @user`` to warn anyone if he/she asks for promotion',inline = False)
         embed.add_field(name = 'mv!getuser(Kick members Permission Required) ',value ='Use it like ``mv!getuser @rolename`` to get list of all users having a particular role',inline = False)
         react_message = await client.send_message(user,embed=embed)
-        reaction = '?'
+        reaction = '🇲'
         await client.add_reaction(react_message, reaction)
     
-      if reaction.emoji == '?':
+      if reaction.emoji == '🇲':
         r, g, b = tuple(int(x * 255) for x in colorsys.hsv_to_rgb(random.random(), 1, 1))
         embed = discord.Embed(color = discord.Color((r << 16) + (g << 8) + b))
         embed.set_author(name='Moderation Commands Help')
@@ -135,7 +135,7 @@ async def on_reaction_add(reaction, user):
         embed.add_field(name = 'mv!serverinfo(Kick members Permission Required) ',value ='Use it like ``mv!serverinfo`` to get server info',inline = False)
         embed.add_field(name = 'mv!userinfo(Kick members Permission Required) ',value ='Use it like ``mv!userinfo @user`` to get some basic info of tagged user',inline = False)
         react_message = await client.send_message(user,embed=embed)
-        reaction = '?'
+        reaction = '🎦'
         await client.add_reaction(react_message, reaction)
       if reaction.emoji == '??':
         r, g, b = tuple(int(x * 255) for x in colorsys.hsv_to_rgb(random.random(), 1, 1))
