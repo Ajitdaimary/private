@@ -12,12 +12,12 @@ import time
 import datetime
 
 Forbidden= discord.Embed(title="Permission Denied", description="1) Please check whether you have permission to perform this action or not. \n2) Please check whether my role has permission to perform this action in this channel or not. \n3) Please check my role position.", color=0x00ff00)
-client = commands.Bot(description="MultiVerse Official Bot", command_prefix=commands.when_mentioned_or("mv!"), pm_help = True)
+client = commands.Bot(description="MultiVerse Official Bot", command_prefix=commands.when_mentioned_or("m!"), pm_help = True)
 client.remove_command('help')
 
 async def status_task():
     while True:
-        await client.change_presence(game=discord.Game(name='for mv!help'))
+        await client.change_presence(game=discord.Game(name='for m!help'))
         await asyncio.sleep(5)
         await client.change_presence(game=discord.Game(name='with '+str(len(set(client.get_all_members())))+' users'))
         await asyncio.sleep(5)
@@ -53,44 +53,44 @@ async def on_reaction_add(reaction, user):
       if reaction.emoji == '🇬':
         r, g, b = tuple(int(x * 255) for x in colorsys.hsv_to_rgb(random.random(), 1, 1))
         embed = discord.Embed(color = discord.Color((r << 16) + (g << 8) + b))
-        embed.add_field(name = 'mv!donate',value ='Sends donation link',inline = False)
-        embed.add_field(name = 'mv!invite or mv!authlink',value ='Use it to invite our bot to your server',inline = False)
-        embed.add_field(name = 'mv!upvote',value ='Use this command to upvote our bot(Link will be in dm)',inline = False)
-        embed.add_field(name = 'mv!meme',value ='Use this command to get random memes.(Sometimes it sends same meme again and again)',inline = False)
-        embed.add_field(name = 'mv!serverinvite ',value ='Use it to get server invite link.',inline = False)
-        embed.add_field(name = 'mv!rolldice',value ='Use it like ``mv!rolldice <1-6 any number that you want to guess in dice>``',inline = False)
-        embed.add_field(name = 'mv!avatar',value ='Use it like ``mv!avatar or mv!avatar @user``',inline = False)
-        embed.add_field(name = 'mv!ping',value ='Use it to check ping of bot',inline = False)
-        embed.add_field(name = 'mv!flipcoin',value ='Use it like ``mv!rolldice <Your prediction>`` prediction = heads, tails or coin self destructed)``',inline = False)
-        embed.add_field(name = 'mv!enterme',value ='Use it like ``mv!enterme <giveaway channel>`` to enter in a giveaway running in a particular channel',inline = False)
-        embed.add_field(name = 'mv!poll ',value ='Use it like ``mv!poll "Question" "Option1" "Option2" ..... "Option9"``.',inline = False)
-        embed.add_field(name = 'mv!guess ',value ='To play guess game use ``mv!guess <number> and number should be between 1-10``',inline = False)
-        embed.add_field(name = 'mv!github ',value ='Use it like- ``mv!github uksoftworld/DarkBot``',inline = False)
-        embed.add_field(name = 'mv!bottutorial ',value ='Use it like ``mv!bottutorial <tutorial name by darklegend>``',inline = False)
-        embed.add_field(name = 'mv!dyno ',value ='Use it like ``mv!dyno <dyno command name>``',inline = False)
-        embed.add_field(name = 'mv!happybirthday @user ',value ='To wish someone happy birthday',inline = False)
-        embed.add_field(name = 'mv!verify ',value ='Use it to get verified role. Note- It needs proper setup.',inline = False)
+        embed.add_field(name = 'm!donate',value ='Sends donation link',inline = False)
+        embed.add_field(name = 'm!invite or mv!authlink',value ='Use it to invite our bot to your server',inline = False)
+        embed.add_field(name = 'm!upvote',value ='Use this command to upvote our bot(Link will be in dm)',inline = False)
+        embed.add_field(name = 'm!meme',value ='Use this command to get random memes.(Sometimes it sends same meme again and again)',inline = False)
+        embed.add_field(name = 'm!serverinvite ',value ='Use it to get server invite link.',inline = False)
+        embed.add_field(name = 'm!rolldice',value ='Use it like ``mv!rolldice <1-6 any number that you want to guess in dice>``',inline = False)
+        embed.add_field(name = 'm!avatar',value ='Use it like ``mv!avatar or mv!avatar @user``',inline = False)
+        embed.add_field(name = 'm!ping',value ='Use it to check ping of bot',inline = False)
+        embed.add_field(name = 'm!flipcoin',value ='Use it like ``mv!rolldice <Your prediction>`` prediction = heads, tails or coin self destructed)``',inline = False)
+        embed.add_field(name = 'm!enterme',value ='Use it like ``mv!enterme <giveaway channel>`` to enter in a giveaway running in a particular channel',inline = False)
+        embed.add_field(name = 'm!poll ',value ='Use it like ``mv!poll "Question" "Option1" "Option2" ..... "Option9"``.',inline = False)
+        embed.add_field(name = 'm!guess ',value ='To play guess game use ``mv!guess <number> and number should be between 1-10``',inline = False)
+        embed.add_field(name = 'm!github ',value ='Use it like- ``mv!github uksoftworld/DarkBot``',inline = False)
+        embed.add_field(name = 'm!bottutorial ',value ='Use it like ``mv!bottutorial <tutorial name by darklegend>``',inline = False)
+        embed.add_field(name = 'm!dyno ',value ='Use it like ``mv!dyno <dyno command name>``',inline = False)
+        embed.add_field(name = 'm!happybirthday @user ',value ='To wish someone happy birthday',inline = False)
+        embed.add_field(name = 'm!verify ',value ='Use it to get verified role. Note- It needs proper setup.',inline = False)
         await client.send_message(user,embed=embed)
       if reaction.emoji == '🇲':
         r, g, b = tuple(int(x * 255) for x in colorsys.hsv_to_rgb(random.random(), 1, 1))
         embed = discord.Embed(color = discord.Color((r << 16) + (g << 8) + b))
         embed.set_author(name='Moderation Commands Help')
         embed.set_image(url = 'https://image.ibb.co/caM2BK/help.gif')
-        embed.add_field(name = 'mv!partner(Admin permission required) (Cooldown of 12hours)',value ='Use it like ``mv!partner <partnership description>`` to partner with many servers with are connected with MultiVerse Official bot',inline = False)
-        embed.add_field(name = 'mv!dm(Admin permission required) ',value ='Use it like ``mv!dm @user <text>`` to dm user from bot',inline = False)
-        embed.add_field(name = 'mv!say(Admin permission required) ',value ='Use it like ``mv!say <text>``',inline = False)
-        embed.add_field(name = 'mv!showme(Requires a role named Giveaways)',value ='To see how many people are taking part in giveaway',inline = False)
-        embed.add_field(name = 'mv!pickwinner(Requires a role named Giveaways)',value ='To pick winner',inline = False)
-        embed.add_field(name = 'mv!embed(Admin permission required) ',value ='Use it like ``mv!embed <text>``',inline = False)
-        embed.add_field(name = 'mv!membercount(Kick members Permission Required) ',value ='Use it like ``mv!membercount`` to get membercount',inline = False)
-        embed.add_field(name = 'mv!removemod(Admin Permission Required)',value ='Use it like ``mv!removemod @user`` to remove him from mod. Note-You need Moderator role in your server below bot to use it.',inline = False)
-        embed.add_field(name = 'mv!makemod(Admin Permission Required)',value ='Use it like ``mv!makemod @user`` to make him mod. Note-You need Moderator role in your server below darkbot to use it.',inline = False)
-        embed.add_field(name = 'mv!friend(Admin Permission Required) ',value ='Use it like ``mv!friend @user`` to give anyone Friend of Owner role',inline = False)
-        embed.add_field(name = 'mv!role(Manage Roles Permission Required)',value ='Use it like ``mv!role @user <rolename>``.',inline = False)
-        embed.add_field(name = 'mv!setnick(Manage nickname permission required)',value ='Use it like ``mv!setnick @user <New nickname>`` to change the nickname of tagged user.',inline = False)
-        embed.add_field(name = 'mv!english(Kick members Permission Required)',value ='Use it like ``mv!english @user`` when someone speaks languages other than English.',inline = False)
-        embed.add_field(name = 'mv!serverinfo(Kick members Permission Required) ',value ='Use it like ``mv!serverinfo`` to get server info',inline = False)
-        embed.add_field(name = 'mv!userinfo(Kick members Permission Required) ',value ='Use it like ``mv!userinfo @user`` to get some basic info of tagged user',inline = False)
+        embed.add_field(name = 'm!partner(Admin permission required) (Cooldown of 12hours)',value ='Use it like ``mv!partner <partnership description>`` to partner with many servers with are connected with MultiVerse Official bot',inline = False)
+        embed.add_field(name = 'm!dm(Admin permission required) ',value ='Use it like ``mv!dm @user <text>`` to dm user from bot',inline = False)
+        embed.add_field(name = 'm!say(Admin permission required) ',value ='Use it like ``mv!say <text>``',inline = False)
+        embed.add_field(name = 'm!showme(Requires a role named Giveaways)',value ='To see how many people are taking part in giveaway',inline = False)
+        embed.add_field(name = 'm!pickwinner(Requires a role named Giveaways)',value ='To pick winner',inline = False)
+        embed.add_field(name = 'm!embed(Admin permission required) ',value ='Use it like ``mv!embed <text>``',inline = False)
+        embed.add_field(name = 'm!membercount(Kick members Permission Required) ',value ='Use it like ``mv!membercount`` to get membercount',inline = False)
+        embed.add_field(name = 'm!removemod(Admin Permission Required)',value ='Use it like ``mv!removemod @user`` to remove him from mod. Note-You need Moderator role in your server below bot to use it.',inline = False)
+        embed.add_field(name = 'm!makemod(Admin Permission Required)',value ='Use it like ``mv!makemod @user`` to make him mod. Note-You need Moderator role in your server below darkbot to use it.',inline = False)
+        embed.add_field(name = 'm!friend(Admin Permission Required) ',value ='Use it like ``mv!friend @user`` to give anyone Friend of Owner role',inline = False)
+        embed.add_field(name = 'm!role(Manage Roles Permission Required)',value ='Use it like ``mv!role @user <rolename>``.',inline = False)
+        embed.add_field(name = 'm!setnick(Manage nickname permission required)',value ='Use it like ``mv!setnick @user <New nickname>`` to change the nickname of tagged user.',inline = False)
+        embed.add_field(name = 'm!english(Kick members Permission Required)',value ='Use it like ``mv!english @user`` when someone speaks languages other than English.',inline = False)
+        embed.add_field(name = 'm!serverinfo(Kick members Permission Required) ',value ='Use it like ``mv!serverinfo`` to get server info',inline = False)
+        embed.add_field(name = 'm!userinfo(Kick members Permission Required) ',value ='Use it like ``mv!userinfo @user`` to get some basic info of tagged user',inline = False)
         react_message = await client.send_message(user,embed=embed)
         reaction = '⏭'
         await client.add_reaction(react_message, reaction)
@@ -100,19 +100,19 @@ async def on_reaction_add(reaction, user):
         embed = discord.Embed(color = discord.Color((r << 16) + (g << 8) + b))
         embed.set_author(name='Moderation Commands Help')
         embed.set_image(url = 'https://image.ibb.co/caM2BK/help.gif')
-        embed.add_field(name = 'mv!unbanall(Unban members Permission Required)',value ='Use it like ``mv!unbanall`` to unban all members',inline = False)
-        embed.add_field(name = 'mv!kick(Kick members Permission Required)',value ='Use it like ``mv!kick @user`` to kick any user',inline = False)
-        embed.add_field(name = 'mv!muteinchannel(Ban members Permission Required)',value ='Use it like ``mv!muteinchannel @user <time in minutes>`` Example- ``mv!muteinchannel @user 1`` to mute user for 1min.',inline = False)
-        embed.add_field(name = 'mv!unmuteinchannel(Ban members Permission Required)',value ='Use it like ``mv!unmuteinchannel @user`` to unmute user from that channel.',inline = False)
-        embed.add_field(name = 'mv!roles(Kick members Permission Required) ',value ='Use it to check roles present in server',inline = False)
-        embed.add_field(name = 'mv!clear(Manage Messages Permission Required)',value ='Use it like ``mv!purge <number>`` to clear any message',inline = False)
-        embed.add_field(name = 'mv!mute(Mute members Permission Required)',value ='Use it like ``mv!mute @user <time in minutes>`` to mute any user. **Note-You need to add Muted role in your server if it is not already there also you must need to change permission of all channels and disable send_message permission for fd role.**',inline = False)
-        embed.add_field(name = 'mv!unmute(Mute members Permission Required) ',value ='Use it like ``mv!unmute @user`` to unmute anyone',inline = False)
-        embed.add_field(name = 'mv!ban(Ban members Permission Required) ',value ='Use it like ``mv!ban @user`` to ban any user',inline = False)
-        embed.add_field(name = 'mv!rules(Kick members Permission Required)',value ='Use it like ``mv!rules @user <violation type>`` to warn user',inline = False)
-        embed.add_field(name = 'mv!warn(Kick members Permission Required)',value ='Use it like ``mv!warn @user <violation type>`` to warn any user',inline = False)    
-        embed.add_field(name = 'mv!norole(Kick members Permission Required) ',value ='Use it like ``mv!norole @user`` to warn anyone if he/she asks for promotion',inline = False)
-        embed.add_field(name = 'mv!getuser(Kick members Permission Required) ',value ='Use it like ``mv!getuser @rolename`` to get list of all users having a particular role',inline = False)
+        embed.add_field(name = 'm!unbanall(Unban members Permission Required)',value ='Use it like ``mv!unbanall`` to unban all members',inline = False)
+        embed.add_field(name = 'm!kick(Kick members Permission Required)',value ='Use it like ``mv!kick @user`` to kick any user',inline = False)
+        embed.add_field(name = 'm!muteinchannel(Ban members Permission Required)',value ='Use it like ``mv!muteinchannel @user <time in minutes>`` Example- ``mv!muteinchannel @user 1`` to mute user for 1min.',inline = False)
+        embed.add_field(name = 'm!unmuteinchannel(Ban members Permission Required)',value ='Use it like ``mv!unmuteinchannel @user`` to unmute user from that channel.',inline = False)
+        embed.add_field(name = 'm!roles(Kick members Permission Required) ',value ='Use it to check roles present in server',inline = False)
+        embed.add_field(name = 'm!clear(Manage Messages Permission Required)',value ='Use it like ``mv!purge <number>`` to clear any message',inline = False)
+        embed.add_field(name = 'm!mute(Mute members Permission Required)',value ='Use it like ``mv!mute @user <time in minutes>`` to mute any user. **Note-You need to add Muted role in your server if it is not already there also you must need to change permission of all channels and disable send_message permission for fd role.**',inline = False)
+        embed.add_field(name = 'm!unmute(Mute members Permission Required) ',value ='Use it like ``mv!unmute @user`` to unmute anyone',inline = False)
+        embed.add_field(name = 'm!ban(Ban members Permission Required) ',value ='Use it like ``mv!ban @user`` to ban any user',inline = False)
+        embed.add_field(name = 'm!rules(Kick members Permission Required)',value ='Use it like ``mv!rules @user <violation type>`` to warn user',inline = False)
+        embed.add_field(name = 'm!warn(Kick members Permission Required)',value ='Use it like ``mv!warn @user <violation type>`` to warn any user',inline = False)    
+        embed.add_field(name = 'm!norole(Kick members Permission Required) ',value ='Use it like ``mv!norole @user`` to warn anyone if he/she asks for promotion',inline = False)
+        embed.add_field(name = 'm!getuser(Kick members Permission Required) ',value ='Use it like ``mv!getuser @rolename`` to get list of all users having a particular role',inline = False)
         react_message = await client.send_message(user,embed=embed)
         reaction = '⏮'
         await client.add_reaction(react_message, reaction)
@@ -122,18 +122,18 @@ async def on_reaction_add(reaction, user):
         embed = discord.Embed(color = discord.Color((r << 16) + (g << 8) + b))
         embed.set_author(name='Moderation Commands Help')
         embed.set_image(url = 'https://image.ibb.co/caM2BK/help.gif')
-        embed.add_field(name = 'mv!announce(Admin Permission required) ',value ='To make bot announce anything using ``mv!announce <channel> <msg>``. Note- It does not annoy people by tagging everyone or here.',inline = False)
-        embed.add_field(name = 'mv!say(Admin permission required) ',value ='Use it like ``mv!say <text>``',inline = False)
-        embed.add_field(name = 'mv!embed(Admin permission required) ',value ='Use it like ``mv!embed <text>``',inline = False)
-        embed.add_field(name = 'mv!membercount(Kick members Permission Required) ',value ='Use it like ``mv!membercount`` to get membercount',inline = False)
-        embed.add_field(name = 'mv!removemod(Admin Permission Required)',value ='Use it like ``mv!removemod @user`` to remove him from mod. Note-You need Moderator role in your server below bot to use it.',inline = False)
-        embed.add_field(name = 'mv!makemod(Admin Permission Required)',value ='Use it like ``mv!makemod @user`` to make him mod. Note-You need Moderator role in your server below darkbot to use it.',inline = False)
-        embed.add_field(name = 'mv!friend(Admin Permission Required) ',value ='Use it like ``mv!friend @user`` to give anyone Friend of Owner role',inline = False)
-        embed.add_field(name = 'mv!role(Manage Roles Permission Required)',value ='Use it like ``mv!role @user <rolename>``.',inline = False)
-        embed.add_field(name = 'mv!setnick(Manage nickname permission required)',value ='Use it like ``mv!setnick @user <New nickname>`` to change the nickname of tagged user.',inline = False)
-        embed.add_field(name = 'mv!english(Kick members Permission Required)',value ='Use it like ``mv!english @user`` when someone speaks languages other than English.',inline = False)
-        embed.add_field(name = 'mv!serverinfo(Kick members Permission Required) ',value ='Use it like ``mv!serverinfo`` to get server info',inline = False)
-        embed.add_field(name = 'mv!userinfo(Kick members Permission Required) ',value ='Use it like ``mv!userinfo @user`` to get some basic info of tagged user',inline = False)
+        embed.add_field(name = 'm!announce(Admin Permission required) ',value ='To make bot announce anything using ``mv!announce <channel> <msg>``. Note- It does not annoy people by tagging everyone or here.',inline = False)
+        embed.add_field(name = 'm!say(Admin permission required) ',value ='Use it like ``mv!say <text>``',inline = False)
+        embed.add_field(name = 'm!embed(Admin permission required) ',value ='Use it like ``mv!embed <text>``',inline = False)
+        embed.add_field(name = 'm!membercount(Kick members Permission Required) ',value ='Use it like ``mv!membercount`` to get membercount',inline = False)
+        embed.add_field(name = 'm!removemod(Admin Permission Required)',value ='Use it like ``mv!removemod @user`` to remove him from mod. Note-You need Moderator role in your server below bot to use it.',inline = False)
+        embed.add_field(name = 'm!makemod(Admin Permission Required)',value ='Use it like ``mv!makemod @user`` to make him mod. Note-You need Moderator role in your server below darkbot to use it.',inline = False)
+        embed.add_field(name = 'm!friend(Admin Permission Required) ',value ='Use it like ``mv!friend @user`` to give anyone Friend of Owner role',inline = False)
+        embed.add_field(name = 'm!role(Manage Roles Permission Required)',value ='Use it like ``mv!role @user <rolename>``.',inline = False)
+        embed.add_field(name = 'm!setnick(Manage nickname permission required)',value ='Use it like ``mv!setnick @user <New nickname>`` to change the nickname of tagged user.',inline = False)
+        embed.add_field(name = 'm!english(Kick members Permission Required)',value ='Use it like ``mv!english @user`` when someone speaks languages other than English.',inline = False)
+        embed.add_field(name = 'm!serverinfo(Kick members Permission Required) ',value ='Use it like ``mv!serverinfo`` to get server info',inline = False)
+        embed.add_field(name = 'm!userinfo(Kick members Permission Required) ',value ='Use it like ``mv!userinfo @user`` to get some basic info of tagged user',inline = False)
         react_message = await client.send_message(user,embed=embed)
         reaction = '⏭'
         await client.add_reaction(react_message, reaction)
@@ -154,21 +154,21 @@ async def on_reaction_add(reaction, user):
         embed = discord.Embed(color = discord.Color((r << 16) + (g << 8) + b))
         embed.set_author(name='Emoji Help')
         embed.set_image(url = 'https://image.ibb.co/caM2BK/help.gif')
-        embed.add_field(name = 'mv!wow',value ='WOW emoji <a:WOW:515854429485006848>',inline = False)
-        embed.add_field(name = 'mv!cat',value ='Cat emoji <a:agooglecat:516174312294842389>',inline = False)
-        embed.add_field(name = 'mv!surprised',value ='Surprised emoji <a:eyebigger:516174315058626560>',inline = False)
-        embed.add_field(name = 'mv!angry',value ='Angry emoji <a:angear:516174316950388772>',inline = False)
-        embed.add_field(name = 'mv!fearfromme',value ='Scary emoji <a:shiroeglassespush:516174320532193289>',inline = False)
-        embed.add_field(name = 'mv!dank',value ='DankMemer emoji <a:OnThaCoco:515853700682743809>',inline = False)
-        embed.add_field(name = 'mv!thinking1',value ='Think emoji1 <a:thinking:516183328613990400>',inline = False)
-        embed.add_field(name = 'mv!thinking2',value ='Think emoji2 <a:thinking2:516183323127709699>',inline = False)
-        embed.add_field(name = 'mv!happy',value ='Happy emoji <a:happy:516183323052212236>',inline = False)
-        embed.add_field(name = 'mv!santa',value ='Santa emoji <a:santa:517232271678504970>',inline = False)
-        embed.add_field(name = 'mv!lol',value ='LoL emoji <a:lol:517232283670020096>',inline = False)
-        embed.add_field(name = 'mv!love',value ='Love emoji <a:love:517232300912672774>',inline = False)
-        embed.add_field(name = 'mv!mad',value ='Mad emoji <a:mad:517232301176913951>',inline = False)
-        embed.add_field(name = 'mv!alien',value ='Alien emoji <a:alien:517232332663422986>',inline = False)
-        embed.add_field(name = 'mv!hi',value ='Saying Hi emoji <a:hi:517232279148429313>',inline = False)
+        embed.add_field(name = 'm!wow',value ='WOW emoji <a:WOW:515854429485006848>',inline = False)
+        embed.add_field(name = 'm!cat',value ='Cat emoji <a:agooglecat:516174312294842389>',inline = False)
+        embed.add_field(name = 'm!surprised',value ='Surprised emoji <a:eyebigger:516174315058626560>',inline = False)
+        embed.add_field(name = 'm!angry',value ='Angry emoji <a:angear:516174316950388772>',inline = False)
+        embed.add_field(name = 'm!fearfromme',value ='Scary emoji <a:shiroeglassespush:516174320532193289>',inline = False)
+        embed.add_field(name = 'm!dank',value ='DankMemer emoji <a:OnThaCoco:515853700682743809>',inline = False)
+        embed.add_field(name = 'm!thinking1',value ='Think emoji1 <a:thinking:516183328613990400>',inline = False)
+        embed.add_field(name = 'm!thinking2',value ='Think emoji2 <a:thinking2:516183323127709699>',inline = False)
+        embed.add_field(name = 'm!happy',value ='Happy emoji <a:happy:516183323052212236>',inline = False)
+        embed.add_field(name = 'm!santa',value ='Santa emoji <a:santa:517232271678504970>',inline = False)
+        embed.add_field(name = 'm!lol',value ='LoL emoji <a:lol:517232283670020096>',inline = False)
+        embed.add_field(name = 'm!love',value ='Love emoji <a:love:517232300912672774>',inline = False)
+        embed.add_field(name = 'm!mad',value ='Mad emoji <a:mad:517232301176913951>',inline = False)
+        embed.add_field(name = 'm!alien',value ='Alien emoji <a:alien:517232332663422986>',inline = False)
+        embed.add_field(name = 'm!hi',value ='Saying Hi emoji <a:hi:517232279148429313>',inline = False)
         await client.send_message(user,embed=embed)
   else:
       for reaction.message.channel in reaction.message.server.channels:
@@ -306,14 +306,14 @@ async def avatar(ctx, user: discord.Member=None):
         r, g, b = tuple(int(x * 255) for x in colorsys.hsv_to_rgb(random.random(), 1, 1))
         embed = discord.Embed(title=f'Avatar', description='Avatar is profile picture of a user in discord', color = discord.Color((r << 16) + (g << 8) + b))
         embed.add_field(name='User: {}'.format(ctx.message.author.name), value='Avatar:', inline=True)
-        embed.set_thumbnail(url='https://cdn.discordapp.com/icons/489333893988745217/eb022a7023d013bec656cd7b94d6d6c1.png') 
+        embed.set_thumbnail(url='https://cdn.discordapp.com/attachments/520853663363760134/520867214287568896/pubg.png') 
         embed.set_image(url = ctx.message.author.avatar_url)
         await client.say(embed=embed)
     else:
         r, g, b = tuple(int(x * 255) for x in colorsys.hsv_to_rgb(random.random(), 1, 1))
         embed = discord.Embed(title=f'Avatar', description='Avatar is profile picture of a user in discord', color = discord.Color((r << 16) + (g << 8) + b))
         embed.add_field(name='User: {}'.format(user.name), value='Avatar:', inline=True)
-        embed.set_thumbnail(url='https://cdn.discordapp.com/icons/489333893988745217/eb022a7023d013bec656cd7b94d6d6c1.png') 
+        embed.set_thumbnail(url='https://cdn.discordapp.com/attachments/520853663363760134/520867214287568896/pubg.png') 
         embed.set_image(url = user.avatar_url)
         await client.say(embed=embed)
 
@@ -355,7 +355,7 @@ async def dm(ctx, user: discord.Member, *, msg: str):
     except discord.ext.commands.MissingPermissions:
         await client.say("Aw, come on! You thought you could get away with DM'ing people without permissions.")
     except:
-        await client.say("Error :x:. Make sure your message is shaped in this way: mv!dm [tag person] [msg]")
+        await client.say("Error :x:. Make sure your message is shaped in this way: m!dm [tag person] [msg]")
 
 @client.command(pass_context = True)
 async def flipcoin(ctx):
@@ -371,7 +371,7 @@ async def flipcoin(ctx):
 @commands.has_permissions(kick_members=True) 
 async def unmute(ctx, member: discord.Member=None):
     if member is None:
-      await client.say('Please specify member i.e. Mention a member to unmute. Example- ``mv!unmute @user``')
+      await client.say('Please specify member i.e. Mention a member to unmute. Example- ``m!unmute @user``')
     if ctx.message.author.bot:
       return
     else:
@@ -388,7 +388,7 @@ async def unmute(ctx, member: discord.Member=None):
 @commands.cooldown(rate=5,per=86400,type=BucketType.user) 
 async def access(ctx, member: discord.Member=None):
     if member is None:
-      await client.say("Please specify a member to give access to him. Example- ``mv!access @user``")
+      await client.say("Please specify a member to give access to him. Example- ``m!access @user``")
     if ctx.message.author.bot:
       return
     else:
@@ -455,13 +455,13 @@ async def setuplog(ctx):
       server = ctx.message.server
       everyone_perms = discord.PermissionOverwrite(send_messages=False, read_messages=True)
       everyone = discord.ChannelPermissions(target=server.default_role, overwrite=everyone_perms)
-      await client.create_channel(server, '╰☆☆-multiverse-log-☆☆╮',everyone)
+      await client.create_channel(server, '╰☆☆-All-log-☆☆╮',everyone)
 
 @client.command(pass_context=True)  
 @commands.has_permissions(kick_members=True)
 async def getuser(ctx, role: discord.Role = None):
     if role is None:
-        await client.say('Please tag a role to get users having it. Example- ``mv!getuser @role``')
+        await client.say('Please tag a role to get users having it. Example- ``m!getuser @role``')
         return
     empty = True
     for member in ctx.message.server.members:
@@ -475,7 +475,7 @@ async def getuser(ctx, role: discord.Role = None):
 @commands.has_permissions(kick_members=True)     
 async def userinfo(ctx, user: discord.Member=None):
     if user is None:
-        await client.say('Please tag a user to get user information. Example- ``mv!userinfo @user``')
+        await client.say('Please tag a user to get user information. Example- ``m!userinfo @user``')
     if ctx.message.author.bot:
       return
     else:
@@ -686,7 +686,7 @@ async def help(ctx):
 @commands.has_permissions(kick_members=True)     
 async def kick(ctx,user:discord.Member):
     if user is None:
-      await client.say('Please mention a member to kick. Example- ``mv!kick @user``')
+      await client.say('Please mention a member to kick. Example- ``m!kick @user``')
     if user.server_permissions.kick_members:
       await client.say('**He is mod/admin and i am unable to kick him/her**')
       return
@@ -709,7 +709,7 @@ async def purge(ctx, number: int):
 @commands.has_permissions(ban_members=True)      
 async def ban(ctx,user:discord.Member=None):
     if user is None:
-      await client.say('Please specify a member to ban. Example- ``mv!ban @user``')
+      await client.say('Please specify a member to ban. Example- ``m!ban @user``')
     if user.server_permissions.ban_members:
       await client.say('**He is mod/admin and i am unable to ban him/her**')
       return
@@ -737,7 +737,7 @@ async def unban(ctx):
       await client.unban(ctx.message.server, ban_list[-1])
       await client.say('Unbanned user: `{}`'.format(ban_list[-1].name))
       for channel in member.server.channels:
-        if channel.name == '╰☆☆-multiverse-log-☆☆╮':
+        if channel.name == '╰☆☆-All-log-☆☆╮':
             embed=discord.Embed(title="User unbanned!", description="**{0}** unbanned by **{1}**!".format(ban_list[-1].name, ctx.message.author), color=0x38761D)
             await client.send_message(channel, embed=embed)
   
