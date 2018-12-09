@@ -107,7 +107,7 @@ async def on_reaction_add(reaction, user):
         embed.add_field(name = 'm!roles(Kick members Permission Required) ',value ='Use it to check roles present in server',inline = False)
         embed.add_field(name = 'm!clear(Manage Messages Permission Required)',value ='Use it like ``m!purge <number>`` to clear any message',inline = False)
         embed.add_field(name = 'm!mute(Mute members Permission Required)',value ='Use it like ``m!mute @user <time in minutes>`` to mute any user. **Note-You need to add Muted role in your server if it is not already there also you must need to change permission of all channels and disable send_message permission for fd role.**',inline = False)
-        embed.add_field(name = 'm!unmute(Mute members Permission Required) ',value ='Use it like ``mv!unmute @user`` to unmute anyone',inline = False)
+        embed.add_field(name = 'm!unmute(Mute members Permission Required) ',value ='Use it like ``m!unmute @user`` to unmute anyone',inline = False)
         embed.add_field(name = 'm!ban(Ban members Permission Required) ',value ='Use it like ``mv!ban @user`` to ban any user',inline = False)
         embed.add_field(name = 'm!rules(Kick members Permission Required)',value ='Use it like ``m!rules @user <violation type>`` to warn user',inline = False)
         embed.add_field(name = 'm!warn(Kick members Permission Required)',value ='Use it like ``m!warn @user <violation type>`` to warn any user',inline = False)    
@@ -142,7 +142,7 @@ async def on_reaction_add(reaction, user):
         embed = discord.Embed(color = discord.Color((r << 16) + (g << 8) + b))
         embed.set_author(name='Setup Help')
         embed.set_image(url = 'https://image.ibb.co/caM2BK/help.gif')
-        embed.add_field(name = 'Setting up Welcomer log(Admin Permission required) ',value ='Use mv!setupwelcomer. It will add a welcome channel. Just put that channel in your desired category and it will send all logs there.',inline = False)
+        embed.add_field(name = 'Setting up Welcomer log(Admin Permission required) ',value ='Use m!setupwelcomer. It will add a welcome channel. Just put that channel in your desired category and it will send all logs there.',inline = False)
         embed.add_field(name = 'Setting up AutoPartner Channel(Admin Permission required)',value ='Using ``m!setuppartner`` command create a channel named multiverse-partner and then you can use mv!partner to partner with other servers.',inline = False)
         embed.add_field(name = 'Setting up Giveaway feature(Manage roles permission required) ',value ='Just add a role named ``Giveaways`` and give that role to user who wanna be giveaway manager. Then use ``mv!help`` and check giveaway commands.',inline = False)
         embed.add_field(name = 'Setting up Reaction Verification(Admin Permission required) ',value ='Just add a role named ``Verified`` then remove permission from everyone to send message in all channels. Also add permission of verified role to send message in chatting channels. Then use ``mv!setreactionverify`` it will automatically add a channel and post information about verification. **__Note__** **Sometimes it does not sends message in channel named #verify-for-chatting when this command is used so reuse that command in such case**',inline = False)
@@ -461,7 +461,7 @@ async def setuplog(ctx):
 @commands.has_permissions(kick_members=True)
 async def getuser(ctx, role: discord.Role = None):
     if role is None:
-        await client.say('Please tag a role to get users having it. Example- ``mv!getuser @role``')
+        await client.say('Please tag a role to get users having it. Example- ``m!getuser @role``')
         return
     empty = True
     for member in ctx.message.server.members:
@@ -666,7 +666,7 @@ async def help(ctx):
       embed = discord.Embed(color = discord.Color((r << 16) + (g << 8) + b))
       embed.set_author(name='Help')
       embed.set_image(url = 'https://image.ibb.co/caM2BK/help.gif')
-      embed.add_field(name = 'Having doubts? Join our server and clear your doubts. Server link:',value ='https://discord.gg/FrRtyS6',inline = False)
+      embed.add_field(name = 'Having doubts? Join our server and clear your doubts. Server link:',value ='https://discord.gg/8KraGXE',inline = False)
       embed.add_field(name = 'React with 🇲 ',value ='Explaines all the commands which are only usable by Those who has moderation permissions. Like- Manage Nicknames, Manage Messages, Kick/Ban Members,etc.',inline = False)
       embed.add_field(name = 'React with 🇬 ',value ='Explaines all the commands which are usable by everyone.',inline = False)
       embed.add_field(name = 'React with 🏵 ',value ='Explaines how to setup some stuffs like Giveaway feature and welcomer feature in your server',inline = False)
