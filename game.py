@@ -665,7 +665,7 @@ async def help(ctx):
       r, g, b = tuple(int(x * 255) for x in colorsys.hsv_to_rgb(random.random(), 1, 1))
       embed = discord.Embed(color = discord.Color((r << 16) + (g << 8) + b))
       embed.set_author(name='Help')
-      embed.set_image(url = 'https://image.ibb.co/caM2BK/help.gif')
+      embed.set_image(url = 'https://cdn.discordapp.com/attachments/521325516775489536/521437814836035585/AppStore_Helplol.gif')
       embed.add_field(name = 'Having doubts? Join our server and clear your doubts. Server link:',value ='https://discord.gg/8KraGXE',inline = False)
       embed.add_field(name = 'React with 🇲 ',value ='Explaines all the commands which are only usable by Those who has moderation permissions. Like- Manage Nicknames, Manage Messages, Kick/Ban Members,etc.',inline = False)
       embed.add_field(name = 'React with 🇬 ',value ='Explaines all the commands which are usable by everyone.',inline = False)
