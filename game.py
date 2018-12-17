@@ -840,7 +840,7 @@ async def help(ctx):
       await client.add_reaction(dmmessage, reaction2)
       await client.add_reaction(dmmessage, reaction3)
       await client.add_reaction(dmmessage, reaction4)
-      await client.say('📨 Check DMs For Information')
+      await client.say('***``Sent you a DM containing the help message!``***')
 
 @client.command(pass_context=True)  
 @commands.has_permissions(kick_members=True)     
