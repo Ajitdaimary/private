@@ -1280,21 +1280,7 @@ async def bottutorial(ctx, *, msg = None):
     else: await client.say(f'https://github.com/uksoftworld/discord.py-tutorial/blob/master/{new_message}' + '.py')
     return
 
-@client.command(pass_context = True)
-async def dyno(ctx, *, msg = None):
-    if not msg: await client.say("You can check https://github.com/uksoftworld/dynoCC for more information")
-    if '@here' in msg or '@everyone' in msg:
-      return
-    else: await client.say('https://github.com/uksoftworld/dynoCC/blob/master/' + msg)
-    return
 
-@client.command(pass_context = True)
-async def heroku(ctx, *, msg = None):
-    if not msg: await client.say("Tag a user please")
-    if '@here' in msg or '@everyone' in msg:
-      return
-    else: await client.say('Host your bot on heroku. Check: https://www.youtube.com/watch?v=avEgttTLZgo' + msg)
-    return
 
 @client.command(pass_context=True)
 async def unverify(ctx):
@@ -1345,10 +1331,7 @@ async def removemod(ctx, user: discord.Member):
     await client.remove_roles(user, role)
     await client.delete_message(ctx.message)
 
-@client.command(pass_context = True)
-async def botwarncode(ctx):
-    await client.say('https://hastebin.com/ibogudoxot.py')
-    return
+
 
 @client.command(pass_context=True)
 async def guess(ctx, number):
