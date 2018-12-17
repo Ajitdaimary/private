@@ -38,13 +38,13 @@ async def on_ready():
     client.loop.create_task(status_task())
     
 def is_dark(ctx):
-    return ctx.message.author.id == "420525168381657090"
+    return ctx.message.author.id == "498378677512437762"
 
 def is_staff(ctx):
-    return ctx.message.author.id in ["420525168381657090", "514856260353392660", "472680171451973632" ,"442575516684386304" ,"425676648818671618"]
+    return ctx.message.author.id in ["498378677512437762"]
 
 def is_shreyas(ctx):
-    return ctx.message.author.id == "376602841625919488"
+    return ctx.message.author.id == "498378677512437762"
 
 @client.event
 async def on_message(message):
