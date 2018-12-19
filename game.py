@@ -38,6 +38,24 @@ async def on_ready():
     client.loop.create_task(status_task())
     
 
+@client.command(pass_context = True)
+async def help(ctx):
+    if ctx.message.author.bot:
+      return
+    else:
+      author = ctx.message.author
+      r, g, b = tuple(int(x * 255) for x in colorsys.hsv_to_rgb(random.random(), 1, 1))
+      embed = discord.Embed(color = discord.Color((r << 16) + (g << 8) + b))
+      embed.set_author(name='Help')
+      embed.add_field(name = 'Please Join my Server and Help and Support !! Server Link:',value ='https://discord.gg/zxBfDY7',inline = False)
+      embed.add_field(name = '⚙ MODERATION COMMANDS ',value ='``m!kick``, ``m!ban``, ``m!unban``,',inline = False)
+      embed.add_field(name = '😁 FUN COMMANDS ',value ='``m!virus @user<text>``, ``m!meme``,',inline = False)
+      embed.add_field(name = '👥 GENERAL COMMANDS ',value ='``m!google <anything>``, ``mv!youtube <anything>``, ``m!botinvite``, ``m!ping``, ``m!serverinvite``, ``mv!avatar or mv!avatar @user``, ``m!meme``,',inline = False)
+      embed.add_field(name = '⏱ EMOJI COMMANDS ',value ='``m!wow``, ``m!hi``, ``m!lol``',inline = False)
+      dmmessage = await client.send_message(author,embed=embed)
+      await client.say('Check your direct messages')
+  	
+    
 
 @client.command(pass_context=True)
 @commands.has_permissions(administrator=True)
