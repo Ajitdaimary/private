@@ -53,7 +53,24 @@ async def help(ctx):
       embed.add_field(name = '👥 GENERAL COMMANDS ',value ='``m!botinvite``, ``sm!ping``, ``sm!avatar or sm!avatar @user``,',inline = False)
       dmmessage = await client.send_message(author,embed=embed)
       await client.say('Check your direct messages')
-  	
+ 
+
+@client.command(pass_context = True)
+async def ping(ctx):
+    channel = ctx.message.channel
+    t1 = time.perf_counter()
+    await client.send_typing(channel)
+    t2 = time.perf_counter()
+    await client.say("Ping: {}ms".format(round((t2-t1)*1000)))
+
+@client.command(pass_context = True)
+async def botinvite(ctx):
+    if ctx.message.author.bot:
+      return
+    else:
+      embed=discord.Embed(title="Click on this link to invite:", description="https://discordapp.com/api/oauth2/authorize?client_id=520695921734844426&permissions=8&scope=bot" , color=0x00fd1b)
+      await client.say(embed=embed)
+
     
 
 @client.command(pass_context=True)
