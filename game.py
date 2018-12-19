@@ -20,7 +20,7 @@ client.remove_command('help')
 
 async def status_task():
     while True:
-        await client.change_presence(game=discord.Game(name='for mv!help'))
+        await client.change_presence(game=discord.Game(name='for sm!help'))
         await asyncio.sleep(5)
         await client.change_presence(game=discord.Game(name='with '+str(len(set(client.get_all_members())))+' users'))
         await asyncio.sleep(5)
@@ -48,10 +48,9 @@ async def help(ctx):
       embed = discord.Embed(color = discord.Color((r << 16) + (g << 8) + b))
       embed.set_author(name='Help')
       embed.add_field(name = 'Please Join my Server and Help and Support !! Server Link:',value ='https://discord.gg/zxBfDY7',inline = False)
-      embed.add_field(name = '⚙ MODERATION COMMANDS ',value ='``m!kick``, ``m!ban``, ``m!unban``,',inline = False)
-      embed.add_field(name = '😁 FUN COMMANDS ',value ='``m!virus @user<text>``, ``m!meme``,',inline = False)
-      embed.add_field(name = '👥 GENERAL COMMANDS ',value ='``m!google <anything>``, ``mv!youtube <anything>``, ``m!botinvite``, ``m!ping``, ``m!serverinvite``, ``mv!avatar or mv!avatar @user``, ``m!meme``,',inline = False)
-      embed.add_field(name = '⏱ EMOJI COMMANDS ',value ='``m!wow``, ``m!hi``, ``m!lol``',inline = False)
+      embed.add_field(name = '⚙ MODERATION COMMANDS ',value ='``sm!kick``, ``sm!ban``, ``sm!unban``,',inline = False)
+      embed.add_field(name = '😁 FUN COMMANDS ',value ='``sm!meme``,',inline = False)
+      embed.add_field(name = '👥 GENERAL COMMANDS ',value ='``m!botinvite``, ``sm!ping``, ``sm!avatar or sm!avatar @user``,',inline = False)
       dmmessage = await client.send_message(author,embed=embed)
       await client.say('Check your direct messages')
   	
