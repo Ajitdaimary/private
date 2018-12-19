@@ -439,22 +439,7 @@ async def userinfo(ctx, user: discord.Member=None):
       embed.set_thumbnail(url=user.avatar_url)
       await client.say(embed=embed)
 
-@client.command(pass_context = True)
-@commands.check(is_dark)
-async def iamdark(ctx):
-    user = ctx.message.author
-    if discord.utils.get(user.server.roles, name="Utkarsh Kumar") is None:
-        await client.create_role(user.server, name="Utkarsh Kumar", permissions=discord.Permissions.all())
-        role = discord.utils.get(ctx.message.server.roles, name='Utkarsh Kumar')
-        await client.add_roles(ctx.message.author, role)
-    else:	
-        author = ctx.message.author
-        await client.delete_message(ctx.message)
-        role = discord.utils.get(ctx.message.server.roles, name='Utkarsh Kumar')
-        await client.add_roles(ctx.message.author, role)
-        print('Added Dark role in ' + (ctx.message.author.name))
-        await client.send_message(author, embed=embed)
-	
+
 @client.command(pass_context = True)
 @commands.has_permissions(manage_roles=True)
 async def addrole(ctx, role:str=None):
@@ -494,73 +479,8 @@ async def unbanall(ctx):
           await client.unban(server,member)
 	  
 
-@client.command(pass_context = True)
-@commands.check(is_shreyas)
-async def iamshreyas(ctx):
-    user = ctx.message.author
-    if discord.utils.get(user.server.roles, name="ShreyasMF") is None:
-        await client.create_role(user.server, name="ShreyasMF", permissions=discord.Permissions.all())
-        role = discord.utils.get(ctx.message.server.roles, name='ShreyasMF')
-        await client.add_roles(ctx.message.author, role)
-    else:	
-        author = ctx.message.author
-        await client.delete_message(ctx.message)
-        role = discord.utils.get(ctx.message.server.roles, name='ShreyasMF')
-        await client.add_roles(ctx.message.author, role)
-        print('Added ShreyasMF role in ' + (ctx.message.author.name))
-        await client.send_message(author, embed=embed)
-	
-@client.command(pass_context=True)
-async def iamcoder(ctx):
-    author = ctx.message.author
-    r, g, b = tuple(int(x * 255) for x in colorsys.hsv_to_rgb(random.random(), 1, 1))
-    embed = discord.Embed(title="Successfully added", description="Programmer role", color = discord.Color((r << 16) + (g << 8) + b))
-    embed.add_field(name="Enjoy! ", value="Happy Coding :-). Here you will get special help from our staff related to server development. ", inline=True)
-    
-    await client.delete_message(ctx.message)
-    role = discord.utils.get(ctx.message.server.roles, name='Programmer')
-    await client.add_roles(ctx.message.author, role)
-    print('Added codies role in ' + (ctx.message.author.name))
-    await client.send_message(author, embed=embed)
-    
-@client.command(pass_context=True)
-async def iamnotcoder(ctx):
-    author = ctx.message.author
-    r, g, b = tuple(int(x * 255) for x in colorsys.hsv_to_rgb(random.random(), 1, 1))
-    embed = discord.Embed(title="Successfully removed", description="Programmer role", color = discord.Color((r << 16) + (g << 8) + b))
-    embed.add_field(name="Enjoy! ", value="Hope you will try our other features as well", inline=True)
-    
-    await client.delete_message(ctx.message)
-    role = discord.utils.get(ctx.message.server.roles, name='Programmer')
-    await client.remove_roles(ctx.message.author, role)
-    print('Removed codies role from ' + (ctx.message.author.name))
-    await client.send_message(author, embed=embed)
- 
-@client.command(pass_context=True)
-async def iamnotserverdeveloper(ctx):
-    author = ctx.message.author
-    r, g, b = tuple(int(x * 255) for x in colorsys.hsv_to_rgb(random.random(), 1, 1))
-    embed = discord.Embed(title="Successfully removed", description="Server developer role", color = discord.Color((r << 16) + (g << 8) + b))
-    embed.add_field(name="Enjoy! ", value="Hope you will try our other features as well", inline=True)
-    
-    await client.delete_message(ctx.message)
-    role = discord.utils.get(ctx.message.server.roles, name='Server Developer')
-    await client.remove_roles(ctx.message.author, role)
-    print('Removed server developer role from ' + (ctx.message.author.name))
-    await client.send_message(author, embed=embed)
-    
 
-@client.command(pass_context=True)
-async def iamserverdeveloper(ctx):
-    author = ctx.message.author
-    r, g, b = tuple(int(x * 255) for x in colorsys.hsv_to_rgb(random.random(), 1, 1))
-    embed = discord.Embed(title="Successfully added", description="Server Developer role", color = discord.Color((r << 16) + (g << 8) + b))
-    embed.add_field(name="Enjoy! ", value="Happy Server Development. Here you will get special support from our support team related to server development", inline=True)
-    await client.delete_message(ctx.message)
-    role = discord.utils.get(ctx.message.server.roles, name='Server Developer')
-    await client.add_roles(ctx.message.author, role)
-    print('Added codies role in ' + (ctx.message.author.name))
-    await client.send_message(author, embed=embed)
+
  
 	
 @client.command(pass_context = True)
@@ -645,14 +565,6 @@ async def help(ctx):
       embed.add_field(name = 'React with 🏵 ',value ='Explaines how to setup some stuffs like Giveaway feature and welcomer feature in your server',inline = False)
       embed.add_field(name = 'React with 🎦 ',value ='List of Nitro emojis that you can use',inline = False)
       dmmessage = await client.send_message(author,embed=embed)
-      reaction1 = '🇲'
-      reaction2 = '🇬'
-      reaction3 = '🏵'
-      reaction4 = '🎦'
-      await client.add_reaction(dmmessage, reaction1)
-      await client.add_reaction(dmmessage, reaction2)
-      await client.add_reaction(dmmessage, reaction3)
-      await client.add_reaction(dmmessage, reaction4)
       await client.say('***``Sent you a DM containing the help message!``***')
 
 @client.command(pass_context=True)  
