@@ -15,7 +15,7 @@ import json
 import aiohttp
 
 Forbidden= discord.Embed(title="Permission Denied", description="1) Please check whether you have permission to perform this action or not. \n2) Please check whether my role has permission to perform this action in this channel or not. \n3) Please check my role position.", color=0x00ff00)
-client = commands.Bot(description="MultiVerse Official Bot", command_prefix=commands.when_mentioned_or("mv!"), pm_help = True)
+client = commands.Bot(description="MultiVerse Official Bot", command_prefix=commands.when_mentioned_or("sm!"), pm_help = True)
 client.remove_command('help')
 
 async def status_task():
@@ -47,7 +47,7 @@ async def help(ctx):
       r, g, b = tuple(int(x * 255) for x in colorsys.hsv_to_rgb(random.random(), 1, 1))
       embed = discord.Embed(color = discord.Color((r << 16) + (g << 8) + b))
       embed.set_author(name='Help')
-      embed.add_field(name = 'Please Join my Server and Help and Support !! Server Link:',value ='https://discord.gg/zxBfDY7',inline = False)
+      embed.add_field(name = 'Please Join my Server and Help and Support !! Server Link:',value ='https://discord.gg/sNG3tTP',inline = False)
       embed.add_field(name = '⚙ MODERATION COMMANDS ',value ='``sm!kick``, ``sm!ban``, ``sm!unban``,',inline = False)
       embed.add_field(name = '😁 FUN COMMANDS ',value ='``sm!meme``,',inline = False)
       embed.add_field(name = '👥 GENERAL COMMANDS ',value ='``m!botinvite``, ``sm!ping``, ``sm!avatar or sm!avatar @user``,',inline = False)
